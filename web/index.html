@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wikinews Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="./">Wikinews <span>Search</span></a></h1>
+    <p class="subtitle">Motore di ricerca sulle notizie di it.wikinews.org</p>
+  </header>
+
+  <main>
+    <form id="search-form" autocomplete="off">
+      <input id="q" name="q" type="search" placeholder='Cerca una notizia… (usa "virgolette" per una frase)' autofocus>
+      <select id="config" name="config" title="Configurazione del motore">
+        <option value="base">base – StandardAnalyzer, solo testo</option>
+        <option value="it">it – ItalianAnalyzer, solo testo</option>
+        <option value="it_boost" selected>it_boost – italiano + boost sul titolo</option>
+        <option value="it_boost_fuzzy">it_boost_fuzzy – come it_boost + errori di battitura</option>
+      </select>
+      <button type="submit">Cerca</button>
+      <label class="compare"><input id="compare" type="checkbox"> Confronta le 4 configurazioni</label>
+    </form>
+
+    <div id="status" class="status"></div>
+    <div id="results"></div>
+    <nav id="pager" class="pager"></nav>
+  </main>
+
+  <footer>
+    Contenuti tratti da <a href="https://it.wikinews.org" target="_blank" rel="noopener">Wikinews in italiano</a>
+    (dump del 20 marzo 2025), distribuiti con licenza
+    <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.it" target="_blank" rel="noopener">CC BY-SA 3.0</a>.
+    Ogni risultato rimanda all'articolo originale.
+    <br>Homework 4 – Ingegneria dei Dati, Università Roma Tre.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

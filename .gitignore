@@ -1,0 +1,19 @@
+# Dati: dump, JSONL e indici si rigenerano (vedi README)
+data/
+
+# Java / Maven
+search/target/
+*.class
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# IDE / sistema
+.idea/
+*.iml
+.vscode/
+.DS_Store
