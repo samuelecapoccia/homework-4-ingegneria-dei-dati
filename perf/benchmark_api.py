@@ -28,7 +28,7 @@ CONFIGS = ["base", "it", "it_boost", "it_boost_fuzzy"]
 
 def queries_from_tsv(path):
     with open(path, encoding="utf-8") as f:
-        return [row["query"] for row in csv.DictReader(f, delimiter="\t") if row.get("query")]
+        return [row["query"] for row in csv.DictReader(f, delimiter="\t", quoting=csv.QUOTE_NONE) if row.get("query")]
 
 
 def queries_from_corpus(path, n, seed=42):

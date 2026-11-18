@@ -80,6 +80,7 @@ Secondo il dump, i contenuti sono distribuiti con licenza **CC BY-SA 3.0**: serv
 **Tempi di risposta dell'API:** `perf/benchmark_api.py`, con 100 query, 10 di warm-up escluse, media, mediana, 95° percentile e massimo per ogni configurazione (risultati in `data/perf.json`).
 
 ### Limiti noti
+- Alcuni box di navigazione (es. negli articoli su Torino 2006) usano classi HTML diverse da `.navbox` e restano nel testo pulito (segnalato durante i giudizi di rilevanza). La correzione è semplice (aggiungere il selettore), ma non è stata applicata: rigenerare il JSONL cambierebbe gli indici dopo il pooling, e i giudizi non corrisponderebbero più al sistema valutato.
 - La soglia di 30 parole è una scelta empirica: elimina pagine vuote e stub, ma potrebbe scartare brevi notizie lampo.
 - I quasi-duplicati (stessa notizia scritta in modo leggermente diverso) non vengono riconosciuti.
 - La data estratta dal testo (14 casi) potrebbe essere una data citata nella notizia invece di quella di pubblicazione.
