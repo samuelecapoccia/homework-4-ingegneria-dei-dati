@@ -1,0 +1,35 @@
+id	bisogno_informativo	termini_controllo
+q01	Naufragio della Costa Concordia all'Isola del Giglio (gennaio 2012) e sue conseguenze: soccorsi, processo, rotazione e rimozione del relitto. Altri naufragi di navi da crociera valgono come rilevanti se sono il tema principale.	naufrag,crociera
+q02	Diffusione dell'influenza suina (virus H1N1, 2009): casi, vittime, misure sanitarie, vaccini.	influenza suina|h1n1
+q03	Incidenti o guasti in centrali nucleari (es. Fukushima 2011) e loro conseguenze su popolazione, ambiente e politica energetica.	nuclear,centrale|centrali|reattore
+q04	Rinuncia di papa Benedetto XVI al pontificato (febbraio 2013): annuncio, reazioni, conseguenze (conclave). Articoli sul conclave successivo valgono 1.	benedetto xvi|ratzinger,dimissioni|rinuncia|dimette
+q05	Crisi economico-finanziaria (in particolare 2008) vista dai mercati: crolli delle borse, fallimenti di banche, interventi di governi e banche centrali.	crisi,borsa|borse
+q06	Elezioni presidenziali degli Stati Uniti di qualunque anno: primarie, campagna elettorale, risultati.	presidenziali,stati uniti|statunitensi|americane|usa
+q07	Naufragi di imbarcazioni di migranti nel Mediterraneo (es. Lampedusa 2013): vittime, soccorsi, reazioni politiche.	naufrag,migranti|immigrati|clandestini
+q08	Pandemia di COVID-19: contagi, restrizioni (lockdown, chiusure, riaperture), effetti in Italia e nel mondo.	coronavirus|covid
+q09	Notizie in cui il pilota Valentino Rossi è protagonista (gare, titoli, carriera). Se è solo citato in un ordine d'arrivo vale 1.	valentino rossi
+q10	Notizie in cui Silvio Berlusconi è protagonista: governi, elezioni, processi, dichiarazioni, morte.	berlusconi
+q11	Notizie in cui Barack Obama è protagonista: candidatura, elezione, presidenza, viaggi, dichiarazioni.	obama
+q12	Notizie su papa Francesco (Jorge Mario Bergoglio): elezione, viaggi, documenti, dichiarazioni, salute.	papa francesco|bergoglio
+q13	Notizie sulla città dell'Aquila, in particolare il terremoto del 6 aprile 2009, il G8 e la ricostruzione.	aquila
+q14	Notizie su Muammar Gheddafi: rapporti internazionali, guerra civile libica del 2011, morte.	gheddafi
+q15	Notizie in cui Giorgio Napolitano è protagonista: elezione e rielezione a Presidente della Repubblica, atti, dichiarazioni, morte.	napolitano
+q16	Eventi accaduti a Lampedusa o nelle sue acque: sbarchi, naufragi, visite istituzionali, vita dell'isola.	lampedusa
+q17	Edizioni del Festival della canzone italiana di Sanremo: vincitori, classifiche, ospiti, polemiche.	sanremo,festival
+q18	Stazione Spaziale Internazionale (ISS): missioni, equipaggi, lanci, attracchi, esperimenti.	stazione spaziale
+q19	Assegnazione del Premio Nobel per la pace: vincitori, motivazioni, cerimonie, polemiche.	nobel,pace
+q20	Corsa ciclistica Giro d'Italia: tappe, vincitori, classifiche, casi di doping.	giro d'italia
+q21	Giochi olimpici estivi o invernali: assegnazione delle sedi, gare, medaglie, cerimonie.	olimpi
+q22	Campionato mondiale di Formula 1: gran premi, piloti, scuderie, titoli mondiali.	formula 1|formula uno
+q23	Guerra russo-ucraina (dal 2022, incluse le premesse del 2014 in Crimea e Donbass): combattimenti, vittime, diplomazia, sanzioni.	ucrain,russ
+q24	[intesa: terremoto Haiti] Terremoto di Haiti del gennaio 2010: vittime, soccorsi, aiuti internazionali, ricostruzione.	haiti,terremoto|sisma|scossa
+q25	[intesa: Michael Schumacher] Notizie sul pilota Michael Schumacher: vittorie, ritiro, ritorno in Mercedes, incidente sugli sci del 2013.	schumacher
+q26	[intesa: olimpiadi Pechino] Giochi olimpici di Pechino 2008: preparazione, gare, medaglie, proteste per il Tibet e la fiaccola.	pechino,olimpi
+q27	[intesa: mondiali di calcio Sudafrica] Campionato mondiale di calcio 2010 in Sudafrica: partite, risultati, l'Italia, la vittoria della Spagna.	sudafrica,mondial
+q28	[intesa: Wikipedia] Notizie su Wikipedia e sui progetti Wikimedia: traguardi, polemiche, censure, eventi della comunità.	wikipedia|wikimedia
+q29	[intesa: calciopoli Juventus] Scandalo Calciopoli (2006): indagini, processi sportivi e penali, retrocessione della Juventus in serie B.	calciopoli|scandalo calcio
+q30	[intesa: Brexit referendum] Uscita del Regno Unito dall'Unione europea: referendum del 2016, negoziati, uscita effettiva.	brexit|esce dall'unione
+r01	Scioperi nei trasporti (treni, aerei, mezzi pubblici, taxi): adesioni, disagi, rivendicazioni.	sciopero,trasport|treni|ferrovi|aere|taxi
+r02	Notizie in cui Matteo Renzi è protagonista: governo, partito, referendum costituzionale 2016, dichiarazioni.	renzi
+r03	Stato Islamico (ISIS): attentati, guerra in Siria e Iraq, ostaggi.	stato islamico|isis
+r04	[intesa: Amatrice terremoto] Terremoto del Centro Italia del 2016 (Amatrice e dintorni): vittime, soccorsi, ricostruzione.	amatrice

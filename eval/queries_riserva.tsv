@@ -1,0 +1,5 @@
+id	query	tipo
+r01	sciopero dei trasporti	keyword
+r02	Matteo Renzi	persona/luogo
+r03	"Stato Islamico"	frase
+r04	Amatrcie terremoto	errore_battitura

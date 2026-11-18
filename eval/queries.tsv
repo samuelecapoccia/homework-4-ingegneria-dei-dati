@@ -1,0 +1,31 @@
+id	query	tipo
+q01	naufragio nave da crociera	keyword
+q02	epidemia influenza suina	keyword
+q03	incidente centrale nucleare	keyword
+q04	dimissioni del papa	keyword
+q05	crisi finanziaria borse	keyword
+q06	elezioni presidenziali americane	keyword
+q07	naufragio migranti Mediterraneo	keyword
+q08	pandemia coronavirus	keyword
+q09	Valentino Rossi	persona/luogo
+q10	Silvio Berlusconi	persona/luogo
+q11	Barack Obama	persona/luogo
+q12	Papa Francesco	persona/luogo
+q13	L'Aquila	persona/luogo
+q14	Gheddafi	persona/luogo
+q15	Giorgio Napolitano	persona/luogo
+q16	Lampedusa	persona/luogo
+q17	"Festival di Sanremo"	frase
+q18	"Stazione Spaziale Internazionale"	frase
+q19	"Premio Nobel per la pace"	frase
+q20	"Giro d'Italia"	frase
+q21	"Giochi olimpici"	frase
+q22	"Formula 1"	frase
+q23	"guerra in Ucraina"	frase
+q24	terremotto Haiti	errore_battitura
+q25	Michael Shumacher	errore_battitura
+q26	olimpiadi Pechinno	errore_battitura
+q27	mondiali di calcio Sudafrca	errore_battitura
+q28	Wikipeida	errore_battitura
+q29	calciopolli Juventus	errore_battitura
+q30	Brexti referendum	errore_battitura
