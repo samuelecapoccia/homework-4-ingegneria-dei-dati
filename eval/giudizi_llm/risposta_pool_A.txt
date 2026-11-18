@@ -1,0 +1,147 @@
+query_id;doc_id;rilevanza;motivo
+q01;50012;0;Portacontainer arenata a Suez: non è una nave da crociera né un naufragio.
+q01;27386;0;Battello turistico su un lago, non una nave da crociera.
+q01;34782;0;Progetto di replica del Titanic, nessun naufragio.
+q01;18143;0;Naufragio di un cargo, non di una nave da crociera.
+q01;46447;0;Naufragio di un traghetto su un lago, non di una nave da crociera.
+q01;2547;0;Missile da crociera: omonimia.
+q01;38189;2;Rotazione del relitto della Costa Concordia.
+q01;3939;0;Affondamento di una nave cementiera.
+q01;11189;0;Portacontainer incagliata, non nave da crociera.
+q01;14400;0;Affondamento di una nave di ricerca del CNR.
+q01;48822;0;Nave militare iraniana affondata per errore.
+q01;9263;0;Naufragio di un peschereccio.
+q01;34016;2;Cronaca del naufragio della Costa Concordia.
+q01;38186;2;Inizio dei lavori di rimozione della Costa Concordia.
+q01;19350;0;Ritrovamento di una nave da guerra della Seconda guerra mondiale.
+q04;12488;0;Nomina del presidente CEI, nessuna rinuncia del papa.
+q04;48343;0;Episodio con papa Francesco, non riguarda la rinuncia.
+q04;1615;0;Politica italiana sull'euro.
+q04;948;0;Malattia di Giovanni Paolo II nel 2005.
+q04;36686;0;Dimissioni del governo Monti.
+q04;37059;2;Rassegna stampa sulle dimissioni di Benedetto XVI.
+q04;9248;0;Viaggio di Benedetto XVI in Turchia.
+q04;1012;0;Cordoglio per la morte di Giovanni Paolo II.
+q04;13735;0;Visita di Blair al papa.
+q04;37054;2;Annuncio della rinuncia di Benedetto XVI.
+q04;3227;0;Dimissioni di Follini dall'UDC.
+q04;14302;0;Dimissioni di Previti dalla Camera.
+q04;9569;0;Dimissioni di un arcivescovo, non del papa.
+q04;3489;0;Dimissioni di un ministro britannico.
+q04;48833;0;Dimissioni del direttore dell'OMC.
+q04;2968;0;Dimissioni del governo Koizumi.
+q04;51424;0;Ipotesi di dimissioni di papa Francesco, non la rinuncia di Benedetto XVI.
+q04;4024;0;Dimissioni del governatore della Banca d'Italia.
+q04;989;0;Condizioni di salute di Giovanni Paolo II.
+q04;23495;0;Dimissioni del presidente sudafricano.
+q04;1348;0;Crisi di governo italiana del 2005.
+q07;14216;2;Tre naufragi di barconi di migranti verso la Sicilia.
+q07;27386;0;Naufragio di un battello turistico su un lago in Macedonia.
+q07;51723;0;Morte di un senatore.
+q07;34016;0;Naufragio di una nave da crociera, non di migranti.
+q07;9263;0;Naufragio di un peschereccio italiano.
+q07;21381;0;Nascita dell'Unione per il Mediterraneo.
+q07;43995;0;Migranti volontari dopo un terremoto.
+q07;46117;0;Sbarco di migranti, nessun naufragio descritto.
+q07;48076;0;Migranti trovati in un camion in Grecia.
+q07;2481;0;Temperature del Mar Mediterraneo.
+q07;22758;0;Appello del papa sull'immigrazione, nessun naufragio descritto.
+q07;18143;0;Naufragio di un cargo nel Mar d'Azov.
+q07;47302;0;Sbarco di migranti a Pozzallo, nessun naufragio.
+q07;47666;0;Incendio di uno scuolabus.
+q07;14400;0;Affondamento di una nave del CNR.
+q10;33528;2;Fiducia chiesta dal governo Berlusconi.
+q10;9540;2;Compensi di Berlusconi dalle holding Fininvest.
+q10;18645;1;Morte della madre di Berlusconi: lui è presente ma non è il protagonista.
+q10;18293;2;Dichiarazioni di Berlusconi sulla grazia a Contrada.
+q10;8250;2;Inchiesta spagnola contro Berlusconi.
+q10;16753;2;Assoluzione di Berlusconi nel processo SME.
+q10;29849;1;Affermazioni di terzi su Berlusconi e la massoneria.
+q10;33742;2;Dimissioni di Berlusconi da presidente del Consiglio.
+q10;21504;2;Processo Mills a carico di Berlusconi.
+q10;35999;2;Berlusconi interrogato dal pm di Palermo.
+q10;17331;2;Berlusconi fonda un nuovo partito.
+q10;5044;2;Causa di Berlusconi contro Travaglio.
+q10;2624;2;Dichiarazioni di Berlusconi sulle intercettazioni.
+q10;52023;2;Morte di Silvio Berlusconi.
+q10;35330;2;Berlusconi si ricandida come premier.
+q10;1385;2;Richiesta di rinvio a giudizio di Berlusconi.
+q10;2992;2;Assoluzione di Berlusconi nel processo All Iberian.
+q13;2387;0;Risultati di rugby: la città compare solo nel nome di una squadra.
+q13;2388;0;Risultati di rugby: la città compare solo nel nome di una squadra.
+q13;8420;0;Convocati della nazionale di rugby: L'Aquila è solo la sede della partita.
+q13;26210;2;Il G8 2009 spostato a L'Aquila dopo il terremoto.
+q13;11323;0;Elenco di risultati di rugby, nessuna notizia sulla città.
+q13;12114;0;Elenco di risultati di rugby, nessuna notizia sulla città.
+q13;2348;0;Risultati di rugby: la città compare solo nel nome di una squadra.
+q13;12017;0;Elenco di risultati di rugby, nessuna notizia sulla città.
+q13;25932;2;Scosse di terremoto nella zona dell'Aquila.
+q13;35259;0;Palio di Siena: omonimia con la contrada dell'Aquila.
+q13;29704;2;Manifestazione dei terremotati dell'Aquila.
+q13;26537;2;Studenti morti nel terremoto dell'Aquila.
+q13;6405;0;Palio di Siena: omonimia con la contrada dell'Aquila.
+q13;2393;0;Risultati di rugby: la città compare solo nel nome di una squadra.
+q13;49919;0;Comune della provincia: la città è citata solo per il prefetto.
+q13;35273;0;Palio di Siena: nessuna notizia sulla città.
+q13;12455;0;Elenco di risultati di rugby, nessuna notizia sulla città.
+q13;22398;0;Palio di Siena: nessuna notizia sulla città.
+q13;12221;0;Elenco di risultati di rugby, nessuna notizia sulla città.
+q16;30422;1;Peschereccio mitragliato che ripara a Lampedusa: l'isola è secondaria.
+q16;14216;1;Naufragi di barconi diretti anche verso Lampedusa.
+q16;38399;2;Naufragio di migranti davanti a Lampedusa.
+q16;21900;0;Novità del governo, nessun riferimento a Lampedusa.
+q16;47302;0;Sbarco a Pozzallo, non a Lampedusa.
+q16;32148;0;Inizio della guerra in Libia.
+q16;47066;1;Migranti diretti a Lampedusa con l'aiuto di Malta: tema politico, l'isola è secondaria.
+q16;36046;0;Villa Certosa in Sardegna: Lampedusa citata di sfuggita.
+q16;7765;2;Strage di migranti al largo di Lampedusa.
+q16;46336;0;Indagine su Salvini, Lampedusa non citata.
+q19;51154;1;Elenco dei Nobel 2022: la pace è una delle categorie.
+q19;8732;2;Nobel per la pace 2006 a Yunus.
+q19;39475;1;Candidature al Nobel per la pace, non l'assegnazione.
+q19;49563;2;Nobel per la pace 2020 al Programma alimentare mondiale.
+q19;44207;0;Morte di Peres: il Nobel è citato di sfuggita.
+q19;33468;2;Assegnazione del Nobel per la pace 2011.
+q19;25906;0;Visto negato al Dalai Lama per una conferenza.
+q19;36276;2;Nobel per la pace 2012 all'Unione europea.
+q19;23953;2;Nobel per la pace 2008 ad Ahtisaari.
+q19;50981;0;Morte di Gorbaciov: il Nobel è citato di sfuggita.
+q22;3438;2;Nuove regole del campionato di Formula 1.
+q22;48825;2;Mercato piloti di Ferrari e McLaren.
+q22;26910;2;Schumacher sostituisce Massa in Ferrari.
+q22;13177;2;Massa vince il GP di Spagna.
+q22;49025;2;Calendario dei GP 2020.
+q22;18962;2;Calendario del mondiale 2008.
+q22;48988;2;Doppio GP d'Austria 2020.
+q22;49059;2;Conferma del GP del Messico 2020.
+q22;3805;1;Passaggio di proprietà della società della F1: aspetto societario, non sportivo.
+q22;12833;2;Massa vince il GP del Bahrain.
+q22;47240;2;Kubica alla Williams per il 2019.
+q22;24392;2;Hamilton campione del mondo 2008.
+q22;27773;2;Button campione del mondo 2009.
+q25;38982;2;Incidente sugli sci di Schumacher.
+q25;2290;0;Mondiali di nuoto.
+q25;33544;0;Elezioni regionali in Molise.
+q25;24429;0;Morte di Michael Crichton.
+q25;44232;0;Nobel per la fisica.
+q25;8289;2;Schumacher vince il GP di Monza 2006.
+q25;35065;0;Festival di Cannes.
+q25;26910;2;Ritorno di Schumacher in Ferrari al posto di Massa.
+q25;52515;0;Morte dell'attore Michael Gambon.
+q25;33352;0;Scioglimento dei R.E.M.
+q25;26686;0;Morte di Michael Jackson.
+q25;22502;0;Record di Bolt nei 200 metri.
+q25;42925;0;Incontro di pugilato.
+q25;4709;0;Olimpiadi invernali: solo menu di navigazione, nessun riferimento a Schumacher.
+q25;5045;0;Pena di morte in California.
+q25;14679;0;Film di Michael Moore.
+q28;4345;2;La Cina blocca Wikipedia.
+q28;24419;2;Cambio di licenza di Wikipedia.
+q28;32760;2;Nuova funzione WikiLove su Wikipedia.
+q28;24885;2;Censura di Wikipedia nel Regno Unito.
+q28;32763;2;Wikipedia proposta come patrimonio UNESCO.
+q28;1159;2;Accordo tra Wikimedia e Yahoo.
+q28;12699;2;Fork della Wikipedia in italiano.
+q28;36937;2;Wikipedia in italiano raggiunge il milione di voci.
+q28;48390;2;Wikipedia di nuovo accessibile in Turchia.
+q28;42510;2;Premio Erasmo alla comunità di Wikipedia.
