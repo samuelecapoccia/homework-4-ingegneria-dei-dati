@@ -77,7 +77,19 @@ Secondo il dump, i contenuti sono distribuiti con licenza **CC BY-SA 3.0**: serv
 - L'indice italiano è più piccolo perché le stopword ("il", "di", "che"...) non vengono indicizzate e lo stemming riunisce più forme sotto un'unica radice ("elezioni"/"elezione"): ci sono meno termini distinti e meno occorrenze (*posting*).
 - Il tempo più basso dell'indice italiano va preso con cautela: lo stemming aggiunge lavoro, quindi la differenza dipende probabilmente dall'ordine di esecuzione (il primo indice paga l'avvio della JVM e la lettura del file da disco a freddo). Con una sola misura la conclusione corretta è che **entrambi gli indici si costruiscono in pochi secondi**.
 
-**Tempi di risposta dell'API:** `perf/benchmark_api.py`, con 100 query, 10 di warm-up escluse, media, mediana, 95° percentile e massimo per ogni configurazione (risultati in `data/perf.json`).
+**Tempi di risposta dell'API** (`perf/benchmark_api.py`, le 30 query di `eval/queries.tsv`, 10 query di warm-up escluse; Windows 11, JDK 17, server in locale; risultati in `data/perf.json`):
+
+| Configurazione | Motore (`took_ms`) media / p95 | Richiesta HTTP completa media / p95 | Query senza risultati |
+|---|---|---|---|
+| base | 2,9 / 8,5 ms | 13,2 / 27,0 ms | 1 |
+| it | 1,7 / 3,0 ms | 11,5 / 26,8 ms | 1 |
+| it_boost | 2,2 / 4,0 ms | 14,9 / 28,1 ms | 1 |
+| it_boost_fuzzy | 20,0 / 58,0 ms | 33,1 / 74,9 ms | 0 |
+
+- **Il fuzzy costa circa 10 volte di più nel motore** (20 ms contro 2 ms): ogni termine della query viene espanso in tutte le varianti entro la distanza di modifica ammessa, e ognuna va cercata e valutata. In cambio è l'unica configurazione che trova risultati per "Wikipeida".
+- **Restano comunque tutti sotto i 100 ms**, la soglia sotto cui una risposta è percepita come immediata. Quindi la scelta del fuzzy si decide sulla qualità dei risultati, non sulla velocità.
+- **Le differenze tra base, it e it_boost** (1-2 ms) sono dentro il rumore di misura.
+- **Il tempo della richiesta HTTP completa** aggiunge circa 10 ms costanti, dovuti alla nuova connessione per ogni richiesta e allo stack di rete di Windows: dipende dalla macchina, non dal motore. Per confrontare le configurazioni si usa il tempo del motore (`took_ms`), che coincide nell'ordine di grandezza con le misure di D sulla sua macchina.
 
 ### Limiti noti
 - Alcuni box di navigazione (es. negli articoli su Torino 2006) usano classi HTML diverse da `.navbox` e restano nel testo pulito (segnalato durante i giudizi di rilevanza). La correzione è semplice (aggiungere il selettore), ma non è stata applicata: rigenerare il JSONL cambierebbe gli indici dopo il pooling, e i giudizi non corrisponderebbero più al sistema valutato.
