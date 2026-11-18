@@ -1,0 +1,94 @@
+```
+query_id;doc_id;rilevanza;motivo
+q18;1296;1;Preparativi Shuttle con modulo Raffaello, ISS solo implicita nell'estratto
+q18;48996;2;Lancio e attracco della Crew Dragon alla ISS
+q18;2296;1;Lancio Discovery STS-114, la ISS non è citata nell'estratto
+q18;49443;1;Rientro Crew Dragon Demo 2, ISS non citata esplicitamente
+q18;51079;2;Cristoforetti nominata comandante della ISS
+q18;48932;1;Rinvio lancio Crew Dragon, destinazione ISS non citata nell'estratto
+q18;16702;2;Missione Shuttle per la costruzione della ISS con equipaggio
+q18;16991;2;Equipaggio STS-120 lascia la ISS dopo installazione di Harmony
+q18;32245;1;Evento divulgativo per bambini sulla ISS, nessuna missione
+q18;18715;2;Attracco STS-122 alla ISS con il modulo Columbus
+q18;16781;2;Attivazione del modulo Harmony sulla ISS
+q18;41015;0;Iniziativa di risparmio energetico a Iseo, nessun legame con la ISS
+q21;35460;2;Medaglie azzurre nel fioretto femminile a Londra 2012
+q21;15225;2;Città candidate a ospitare i Giochi 2016
+q21;35443;2;Gara di judo ai Giochi di Londra 2012
+q21;21753;2;Esclusione dell'Iraq dai Giochi di Pechino 2008 decisa dal CIO
+q21;43898;2;Record olimpico nel getto del peso a Rio 2016
+q21;43859;2;Finale olimpica di spada a squadre a Rio 2016
+q21;4811;2;Gara di slittino femminile ai Giochi invernali di Torino 2006
+q21;27738;2;Candidatura di Palermo ai Giochi olimpici 2020
+q21;16497;2;Risultati della prima giornata di Torino 2006
+q21;4816;2;Discesa libera femminile e oro olimpico a Torino 2006
+q21;43697;2;Prima medaglia olimpica del Kosovo nel judo a Rio 2016
+q21;43793;1;Squalifica per doping di Schwazer, l'esclusione dai Giochi è conseguenza
+q21;43872;2;Oro e record olimpico nel salto con l'asta a Rio 2016
+q21;43680;2;Primo oro olimpico del Vietnam a Rio 2016
+q21;43696;2;Oro italiano nel judo a Rio 2016
+q24;28604;2;Bilancio delle vittime e soccorsi del terremoto del 2010
+q24;49160;0;Documentario Netflix sull'AIDS, nessun legame col terremoto
+q24;50189;0;Assassinio del presidente Moïse nel 2021, non il terremoto
+q24;7427;0;Rapimento a Haiti nel 2006, precedente al terremoto
+q24;28555;2;Notizia del sisma di magnitudo 7 e prime vittime
+q24;51182;0;Forniture alla polizia haitiana nel 2022, terremoto assente
+q24;7466;0;Liberazione dell'ostaggio nel 2006, nessun terremoto
+q24;31034;1;Epidemia di colera post-sisma, il terremoto è contesto secondario
+q24;19256;0;Diritti umani in Cina, nessun legame con Haiti
+q24;17821;0;Tempesta tropicale Olga nel 2007, non il terremoto
+q27;29406;2;Partita Algeria-Slovenia dei Mondiali 2010
+q27;3713;0;Qualificazione australiana ai Mondiali 2006, edizione diversa
+q27;6272;0;Mondiali 2006 in Germania, edizione diversa
+q27;29736;2;Finale per il terzo posto dei Mondiali 2010
+q27;29733;1;Pronostico del polpo Paul sulla finale, partite solo accennate
+q27;6271;0;Ottavi dei Mondiali 2006, edizione diversa
+q27;29743;2;Vittoria della Spagna nella finale dei Mondiali 2010
+q27;29483;2;Risultati di tre partite dei Mondiali 2010
+q27;29480;2;Esordio dell'Italia contro il Paraguay ai Mondiali 2010
+q27;6558;0;Finale dei Mondiali 2006, edizione diversa
+q27;29710;2;Semifinale vinta dalla Spagna ai Mondiali 2010
+q27;6597;0;Controlli antidoping ai Mondiali 2006
+q27;29385;2;Cerimonia d'apertura dei Mondiali 2010 in Sudafrica
+q27;6360;0;Quarti di finale dei Mondiali 2006
+q27;9622;0;Razzismo e prostituzione ai Mondiali 2006
+q27;6557;0;Semifinale dei Mondiali 2006
+q27;29407;2;Gara inaugurale Sudafrica-Messico dei Mondiali 2010
+q27;17824;0;Mondiale per club 2007, competizione diversa
+q27;6464;0;Quarti di finale dei Mondiali 2006
+q27;6642;0;Episodio Materazzi-Zidane nella finale 2006
+q27;16926;0;Assegnazione dei Mondiali 2014 al Brasile
+q27;6617;0;Premio miglior giocatore dei Mondiali 2006
+q27;6674;0;Inchiesta FIFA su Materazzi dopo la finale 2006
+q30;17685;0;Referendum costituzionale in Venezuela
+q30;9372;0;Referendum locale in alta Valmarecchia
+q30;25391;0;Referendum costituzionale in Bolivia
+q30;4965;0;Referendum per l'indipendenza di Tokelau
+q30;5689;0;Referendum italiano sulla devolution, non sul Regno Unito
+q30;23543;0;Referendum comunale per il passaggio al Trentino
+q30;39309;0;Referendum svizzero sull'immigrazione
+q30;14190;0;Firme per referendum elettorale italiano
+q30;48479;0;Referendum costituzionale italiano sul taglio dei parlamentari
+q30;49290;0;Referendum per l'indipendenza della Nuova Caledonia
+q30;5137;0;Raccolta firme per il referendum italiano sulla devolution
+q30;20890;0;Referendum irlandese sul Trattato di Lisbona, non la Brexit
+q30;46620;0;Referendum in Romania sulle nozze gay
+q30;50245;0;Referendum ungherese sulla legge anti LGBT
+q30;24679;0;Referendum sull'autodeterminazione della Groenlandia
+q30;18670;0;Data del referendum elettorale italiano
+q30;44744;0;Referendum comunale sul cambio di nome di Ortonovo
+```
+
+**Righe giudicate per query:**
+- q18: 12
+- q21: 15
+- q24: 10
+- q27: 23
+- q30: 17
+- Totale: 77
+
+**Righe impossibili da giudicare:** nessuna. Alcune però meritano una nota:
+
+- **4811 e 16497 (q21):** l'estratto è quasi tutto menu di navigazione di Torino 2006. Le ho giudicate dal titolo, che indica una gara e una giornata di risultati specifiche, e dal poco testo visibile.
+- **1296, 2296, 49443, 48932 (q18):** sono missioni dirette alla ISS, ma la stazione non è nominata nell'estratto. Per questo ho scelto il valore più basso.
+- **q30:** il pool non contiene alcun documento sulla Brexit, quindi la query ha zero documenti rilevanti.
