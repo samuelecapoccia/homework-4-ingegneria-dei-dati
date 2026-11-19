@@ -1,0 +1,142 @@
+Giudizi proposti per pool_C.csv (LLM-as-a-judge, da rivedere riga per riga da C).
+Criteri: eval/LINEE_GUIDA_GIUDIZI.md; si giudica il bisogno_informativo usando titolo, data ed estratto; nel dubbio il valore più basso.
+
+query_id;doc_id;rilevanza;motivo
+q02;26793;2;Primo caso di influenza suina in Kenya nel 2009.
+q02;4692;0;Influenza aviaria, non suina.
+q02;2709;0;Influenza aviaria, non suina.
+q02;32527;0;Epidemia di Escherichia coli, altro tema.
+q02;33068;0;Epidemia di colera, altro tema.
+q02;2628;0;Influenza aviaria, non suina.
+q02;27013;2;Primi decessi per A/H1N1 in Africa.
+q02;7716;0;Influenza aviaria H5N1, non suina.
+q02;2622;0;Influenza aviaria negli Urali.
+q02;27936;2;Decessi per influenza A in Italia nel 2009.
+q02;2496;0;Febbre suina in Cina 2005: malattia diversa dall'H1N1.
+q02;28018;2;Distribuzione del vaccino contro l'influenza A.
+q02;26230;2;Epidemia di influenza suina in Messico, origine della pandemia.
+q05;23951;2;Crollo delle borse asiatiche nella crisi del 2008.
+q05;20779;1;Dichiarazioni politiche sulla crisi, mercati non al centro.
+q05;24847;2;Borse in calo e taglio dei tassi BCE nella crisi.
+q05;21078;1;Ribasso delle borse 2008, crisi solo sullo sfondo.
+q05;24501;0;Spese delle università, altro tema.
+q05;25323;1;Proteste per la crisi in Lituania, non i mercati.
+q05;14552;2;Tracollo di Tokyo per la crisi dei mutui subprime.
+q05;24286;0;Legge finanziaria e università: omonimia.
+q05;21983;0;Fiducia sulla manovra in Senato, altro tema.
+q05;24184;1;Conferenza sul capitalismo nella crisi, mercati non trattati.
+q05;23876;2;Crolli delle borse dopo i piani di salvataggio.
+q05;39518;0;Borsa in rialzo nel 2014, nessuna crisi.
+q05;17376;2;Perdite delle borse europee per i subprime.
+q05;12257;1;Crollo delle borse del febbraio 2007, prima della crisi.
+q08;48997;1;Singolo caso di positività, pandemia sullo sfondo.
+q08;48903;2;Ripresa del campionato spagnolo dopo il lockdown.
+q08;48803;2;Prolungamento dello stato di emergenza in Francia.
+q08;49267;2;Un milione di casi in Brasile.
+q08;48654;2;Effetti economici della pandemia sull'ATAC.
+q08;48633;1;Johnson dimesso dall'ospedale: caso personale.
+q08;48814;2;Fase 2 e riaperture in Francia.
+q08;48517;2;Bollettino della Protezione Civile sui contagi.
+q08;48537;2;Dati OMS sulla diffusione del virus.
+q08;49269;1;Singolo caso di positività, pandemia sullo sfondo.
+q08;48540;0;Chiusura di una tratta ferroviaria, legame col virus non evidente.
+q08;48514;2;Effetti della pandemia sull'Eurovision 2020.
+q08;48522;2;Nuovi ospedali COVID a Roma.
+q08;48577;1;Misura locale di supporto agli operatori sanitari.
+q08;48584;2;Zona rossa a Nerola.
+q11;30948;1;Vulnerabilità del sito di Obama, lui non protagonista.
+q11;18776;2;Obama vince le primarie del Potomac.
+q11;24408;2;Elezione di Obama a presidente.
+q11;36497;2;Rielezione di Obama.
+q11;27712;2;Nobel per la pace a Obama.
+q11;39622;2;Visita di Obama in Italia.
+q11;24403;1;Pagina speciale riassuntiva sulle elezioni 2008.
+q11;24469;1;Polemica italiana su una battuta, Obama non protagonista.
+q11;24634;2;Nomine del governo Obama.
+q11;25345;2;Giuramento di Obama.
+q11;24449;1;Battuta di Berlusconi su Obama, protagonista Berlusconi.
+q11;22552;2;Obama sceglie Biden come vice.
+q11;18476;2;Obama vince le primarie in Carolina del Sud.
+q11;18262;1;Kerry appoggia Obama, protagonista Kerry.
+q11;24441;2;Obama nomina il capo di gabinetto.
+q11;20711;2;Obama si proclama vincitore delle primarie.
+q14;33344;2;Messaggio audio di Gheddafi durante la guerra.
+q14;36309;2;Anniversario della morte di Gheddafi.
+q14;22747;2;Accordo Berlusconi-Gheddafi.
+q14;33127;1;Giornalisti liberati durante la guerra, Gheddafi marginale.
+q14;33106;2;Caduta di Tripoli e cattura dei figli di Gheddafi.
+q14;33560;2;Morte di Gheddafi.
+q14;25526;2;Gheddafi presidente dell'Unione Africana.
+q14;33101;2;Avanzata dei ribelli su Tripoli contro il regime.
+q14;20159;1;Dichiarazioni del figlio sui rapporti con l'Italia.
+q14;33124;1;Giornalisti sequestrati durante la guerra, Gheddafi marginale.
+q17;50485;1;Canzoni del Festival 2022 viste come tormentoni.
+q17;4938;2;Apertura del Festival 2006.
+q17;52891;2;Vittoria di Angelina Mango nel 2024.
+q17;9565;2;Big in gara a Sanremo 2007.
+q17;12253;2;Inizio del Festival 2007 tra polemiche.
+q17;50376;2;Big in gara a Sanremo 2022.
+q17;12399;2;Vincitore di Sanremo giovani 2007.
+q17;31919;2;Vittoria di Vecchioni nel 2011.
+q17;44778;2;Vittoria di Gabbani nel 2017.
+q17;12422;2;Vittoria di Cristicchi nel 2007.
+q17;16118;1;Processo nato da frasi dette al Festival 2001.
+q20;13117;1;Doping di Basso, Giro citato solo come titolo vinto.
+q20;13277;2;Nona tappa del Giro 2007.
+q20;3968;1;Necrologio di Gaul, impresa al Giro citata.
+q20;5864;2;Prima tappa del Giro 2006.
+q20;20359;2;Nona tappa del Giro 2008.
+q20;5992;2;Ultima tappa del Giro 2006.
+q20;49599;2;Tappa accorciata al Giro 2020.
+q20;1576;0;Tour de France, non Giro d'Italia.
+q20;20634;2;Ultima tappa del Giro 2008.
+q20;13398;2;Diciottesima tappa del Giro 2007.
+q20;37607;2;Cronosquadre del Giro 2013.
+q20;20253;2;Prima tappa del Giro 2008.
+q20;5121;1;Necrologio di Cottur, tappa del Giro citata.
+q20;13334;2;Tredicesima tappa del Giro 2007.
+q20;13496;2;Ventesima tappa del Giro 2007.
+q23;53638;2;Incontro Trump-Zelens'kyj sulla guerra.
+q23;52450;2;Diplomazia del G20 sulla guerra in Ucraina.
+q23;50530;1;Scisma religioso nelle tensioni pre-invasione.
+q23;53641;0;Pagina-elenco di notizie, Ucraina solo nominata.
+q26;7784;0;Olimpiadi dell'informatica: omonimia.
+q26;13994;0;Assegnazione di Soči 2014.
+q26;22239;2;Apertura delle Olimpiadi di Pechino 2008.
+q26;3112;0;Olimpiadi invernali di Torino 2006.
+q26;46506;0;Candidatura Milano-Cortina 2026.
+q26;21707;2;Squadra azzurra per Pechino 2008.
+q26;22266;1;Ascolti TV della cerimonia di Pechino.
+q26;23005;1;Atleti di Pechino ricevuti al Quirinale.
+q26;22287;2;Oro di Tagliariol a Pechino.
+q26;2245;0;Olimpiadi della matematica: omonimia.
+q26;6678;0;Candidatura di Milano per il 2020.
+q26;50243;0;Assegnazione di Brisbane 2032.
+q26;22580;2;Oro di Cammarelle a Pechino.
+q26;2873;0;Candidatura di Milano per il 2016.
+q26;19691;2;Proteste pro-Tibet contro la fiaccola olimpica.
+q26;50224;0;Olimpiadi di Tokyo 2020.
+q26;5941;0;Olimpiadi degli scacchi: omonimia.
+q26;22052;1;Sharapova rinuncia a Pechino per infortunio.
+q26;17295;0;Rinuncia di Roma al 2016.
+q26;22075;1;Costi Rai per trasmettere Pechino 2008.
+q26;38163;0;Assegnazione di Tokyo 2020.
+q26;14421;1;Diritti umani in Cina in vista dei Giochi.
+q29;8982;0;Partita di Serie B, scandalo non trattato.
+q29;34827;0;Scudetto 2012, nessun legame con Calciopoli.
+q29;34618;0;Partita del 2012.
+q29;49447;0;Scudetto 2020.
+q29;34728;0;Partita del 2012.
+q29;34716;0;Partita del 2012.
+q29;34543;0;Partita del 2012.
+q29;9348;0;Partita rinviata per lutto.
+q29;34775;0;Partita del 2012.
+q29;38870;0;Multa per cori allo stadio.
+q29;6624;0;Nuovo allenatore, scandalo non nell'estratto.
+q29;17300;2;Indagini di Calciopoli su Roma-Juventus.
+q29;9534;0;Necrologio di un ex calciatore.
+q29;34800;0;Partita del 2012.
+q29;19707;0;Partita del 2008, estratto con menu.
+q29;23227;0;Torneo giovanile.
+q29;13249;1;Ritorno in A dopo la retrocessione d'ufficio.
+q29;9103;0;Pallone d'oro a Cannavaro.
