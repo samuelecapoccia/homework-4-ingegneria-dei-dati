@@ -6,8 +6,8 @@ Ogni membro annota qui le proprie scelte, con il motivo e i numeri che le suppor
 
 ## A – Dati (`ingest/`)
 
-**Sorgente:** dump di it.wikinews del 20 marzo 2025, formato Wikimedia Enterprise HTML. Contiene un solo file NDJSON da 591 MB con 12.261 pagine del namespace 0 (articoli).
-**Risultato:** 10.914 articoli validi (89% delle pagine) in `data/wikinews_clean.jsonl`, statistiche in `data/stats.json`. Tempo di elaborazione: circa 6 minuti.
+Sorgente: dump di it.wikinews del 20 marzo 2025, formato Wikimedia Enterprise HTML. Contiene un solo file NDJSON da 591 MB con 12.261 pagine del namespace 0 (articoli).
+Risultato: 10.914 articoli validi (89% delle pagine) in `data/wikinews_clean.jsonl`, statistiche in `data/stats.json`. Tempo di elaborazione: circa 6 minuti.
 
 | Motivo di scarto | Pagine |
 |---|---|
@@ -16,7 +16,7 @@ Ogni membro annota qui le proprie scelte, con il motivo e i numeri che le suppor
 | Titolo duplicato (tenuta la versione più recente) | 34 |
 | Marcate "Da cancellare" | 1 |
 | Pagina di servizio | 1 |
-| **Totale scartate** | **1.347** |
+| Totale scartate | 1.347 |
 
 ### 1. Lettura in streaming
 Il `.tar.gz` viene letto riga per riga, senza estrarlo su disco e senza caricarlo in memoria.
@@ -37,7 +37,7 @@ Si tengono solo le pagine con categoria "Pubblicati" o "Articoli archiviati". Ne
 | `Data` | 58,8% | 92,1% |
 | `Categorizzare` / `Argomenti` (pagina incompleta) | 3,3% / 2,7% | 0,0% / 0,0% |
 
-Le pagine non pubblicate sono quasi sempre senza fonti, quindi non verificabili: per questo non hanno superato la revisione. **Decisione confermata:** restano escluse.
+Le pagine non pubblicate sono quasi sempre senza fonti, quindi non verificabili: per questo non hanno superato la revisione. Decisione confermata: restano escluse.
 *Trade-off:* perdiamo circa l'8% delle pagine che hanno l'aspetto di una notizia, ma il motore mostra solo contenuti verificati.
 
 ### 4. Data di pubblicazione
@@ -51,23 +51,23 @@ Risultato: 10.828 date dalla categoria (99,2%), 14 dal testo, 1 da `date_created
 *Perché non `date_modified`:* indica l'ultima modifica, non la pubblicazione. Nel primo record del dump, per esempio, la pagina è stata creata nel 2005 e modificata nel 2024. Una data sbagliata è peggio di una data mancante, perché falserebbe filtri e ordinamenti.
 
 ### 5. Duplicati
-- **Stesso titolo** (34 casi): si tiene la versione con `date_modified` più recente.
-- **Testo identico con titoli diversi**: si riconosce con un hash MD5 del testo (0 casi).
+- Stesso titolo (34 casi): si tiene la versione con `date_modified` più recente.
+- Testo identico con titoli diversi: si riconosce con un hash MD5 del testo (0 casi).
 
 ### 6. Categorie
 Dal campo `categories` sono tolte le categorie di manutenzione ("Pubblicati", "Articoli archiviati", "Articoli da controllare per l'archiviazione", ecc.) e le categorie-data.
 *Perché:* non descrivono l'argomento della notizia, e la data ha già il suo campo.
 
 ### 7. Licenza
-Secondo il dump, i contenuti sono distribuiti con licenza **CC BY-SA 3.0**: servono l'attribuzione a Wikinews e la condivisione con la stessa licenza.
+Secondo il dump, i contenuti sono distribuiti con licenza CC BY-SA 3.0: servono l'attribuzione a Wikinews e la condivisione con la stessa licenza.
 
 ### Osservazioni sui dati (per le slide)
-- **Il corpus è sbilanciato nel tempo:** il 54% degli articoli (5.856) è del periodo 2005–2008. Dal 2009 si scende a 150–560 articoli l'anno, e del 2025 ce ne sono solo 45 perché il dump è di marzo. Ordinare per data mostrerà soprattutto poche notizie recenti.
-- **Il corpus è sbilanciato nella geografia e nei temi:** "Europa" compare in 7.895 articoli e "Italia" in 6.232, mentre lo sport è il tema più frequente (3.762). Le query su altre aree del mondo avranno pochi risultati: è un limite di copertura del dataset, non del motore.
-- **La lunghezza varia molto:** mediana di 154 parole, media di 229, massimo di 15.335 (un valore anomalo). La normalizzazione per lunghezza di BM25 serve proprio a gestire questa variabilità.
+- Il corpus è sbilanciato nel tempo: il 54% degli articoli (5.856) è del periodo 2005–2008. Dal 2009 si scende a 150–560 articoli l'anno, e del 2025 ce ne sono solo 45 perché il dump è di marzo. Ordinare per data mostrerà soprattutto poche notizie recenti.
+- Il corpus è sbilanciato nella geografia e nei temi: "Europa" compare in 7.895 articoli e "Italia" in 6.232, mentre lo sport è il tema più frequente (3.762). Le query su altre aree del mondo avranno pochi risultati: è un limite di copertura del dataset, non del motore.
+- La lunghezza varia molto: mediana di 154 parole, media di 229, massimo di 15.335 (un valore anomalo). La normalizzazione per lunghezza di BM25 serve proprio a gestire questa variabilità.
 
 ### Prestazioni
-**Indicizzazione** (misure di B, 10.914 documenti):
+Indicizzazione (misure di B, 10.914 documenti):
 
 | Indice | Tempo | Dimensione su disco |
 |---|---|---|
@@ -75,9 +75,9 @@ Secondo il dump, i contenuti sono distribuiti con licenza **CC BY-SA 3.0**: serv
 | it (ItalianAnalyzer) | 2,15 s | 16,63 MB (−10,5%) |
 
 - L'indice italiano è più piccolo perché le stopword ("il", "di", "che"...) non vengono indicizzate e lo stemming riunisce più forme sotto un'unica radice ("elezioni"/"elezione"): ci sono meno termini distinti e meno occorrenze (*posting*).
-- Il tempo più basso dell'indice italiano va preso con cautela: lo stemming aggiunge lavoro, quindi la differenza dipende probabilmente dall'ordine di esecuzione (il primo indice paga l'avvio della JVM e la lettura del file da disco a freddo). Con una sola misura la conclusione corretta è che **entrambi gli indici si costruiscono in pochi secondi**.
+- Verifica dell'ordine (C, 3 esecuzioni per ordine, JVM nuova ogni volta): base → it dà base 1.083 ms e it 682 ms; it → base dà it 1.006 ms e base 749 ms. Il primo indice costruito paga circa 300-400 ms di avvio della JVM, quindi l'ordine conta. A parità di posizione, però, l'indice italiano resta più veloce del 7-9%: non indicizzando le stopword scrive meno posting, e questo compensa il costo dello stemming. Conclusione: entrambi gli indici si costruiscono in circa 1 s; a parità di condizioni quello italiano è un po' più veloce e più piccolo del 10%.
 
-**Tempi di risposta dell'API** (`perf/benchmark_api.py`, le 30 query di `eval/queries.tsv`, 10 query di warm-up escluse; Windows 11, JDK 17, server in locale; risultati in `data/perf.json`):
+Tempi di risposta dell'API (`perf/benchmark_api.py`, le 30 query di `eval/queries.tsv`, 10 query di warm-up escluse; Windows 11, JDK 17, server in locale; risultati in `data/perf.json`):
 
 | Configurazione | Motore (`took_ms`) media / p95 | Richiesta HTTP completa media / p95 | Query senza risultati |
 |---|---|---|---|
@@ -86,10 +86,10 @@ Secondo il dump, i contenuti sono distribuiti con licenza **CC BY-SA 3.0**: serv
 | it_boost | 2,2 / 4,0 ms | 14,9 / 28,1 ms | 1 |
 | it_boost_fuzzy | 20,0 / 58,0 ms | 33,1 / 74,9 ms | 0 |
 
-- **Il fuzzy costa circa 10 volte di più nel motore** (20 ms contro 2 ms): ogni termine della query viene espanso in tutte le varianti entro la distanza di modifica ammessa, e ognuna va cercata e valutata. In cambio è l'unica configurazione che trova risultati per "Wikipeida".
-- **Restano comunque tutti sotto i 100 ms**, la soglia sotto cui una risposta è percepita come immediata. Quindi la scelta del fuzzy si decide sulla qualità dei risultati, non sulla velocità.
-- **Le differenze tra base, it e it_boost** (1-2 ms) sono dentro il rumore di misura.
-- **Il tempo della richiesta HTTP completa** aggiunge circa 10 ms costanti, dovuti alla nuova connessione per ogni richiesta e allo stack di rete di Windows: dipende dalla macchina, non dal motore. Per confrontare le configurazioni si usa il tempo del motore (`took_ms`), che coincide nell'ordine di grandezza con le misure di D sulla sua macchina.
+- Il fuzzy costa circa 10 volte di più nel motore (20 ms contro 2 ms): ogni termine della query viene espanso in tutte le varianti entro la distanza di modifica ammessa, e ognuna va cercata e valutata. In cambio è l'unica configurazione che trova risultati per "Wikipeida".
+- Restano comunque tutti sotto i 100 ms, la soglia sotto cui una risposta è percepita come immediata. Quindi la scelta del fuzzy si decide sulla qualità dei risultati, non sulla velocità.
+- Le differenze tra base, it e it_boost (1-2 ms) sono dentro il rumore di misura.
+- Il tempo della richiesta HTTP completa aggiunge circa 10 ms costanti, dovuti alla nuova connessione per ogni richiesta e allo stack di rete di Windows: dipende dalla macchina, non dal motore. Per confrontare le configurazioni si usa il tempo del motore (`took_ms`), che coincide nell'ordine di grandezza con le misure di D sulla sua macchina.
 
 ### Limiti noti
 - Alcuni box di navigazione (es. negli articoli su Torino 2006) usano classi HTML diverse da `.navbox` e restano nel testo pulito (segnalato durante i giudizi di rilevanza). La correzione è semplice (aggiungere il selettore), ma non è stata applicata: rigenerare il JSONL cambierebbe gli indici dopo il pooling, e i giudizi non corrisponderebbero più al sistema valutato.
@@ -132,5 +132,4 @@ Secondo il dump, i contenuti sono distribuiti con licenza **CC BY-SA 3.0**: serv
 - **Strategia di test a livelli** (`eval/STRATEGIA_TEST.md`). Ogni livello risponde a una domanda diversa: i dati sono riproducibili? le metriche sono giuste? l'API rispetta il contratto? le query note funzionano? quanto costa ogni configurazione? quale configurazione dà i risultati migliori? I primi cinque livelli si rilanciano con un comando; l'ultimo richiede giudizi umani.
 - **Riproducibilità come test.** Il JSONL è stato rigenerato dal dump su una macchina diversa da quella di A: 10.914 articoli, lo stesso numero indicizzato da B. Il risultato non dipende quindi dall'ambiente di chi l'ha prodotto.
 - **Prestazioni misurate sulle stesse 30 query della valutazione**, così costo ed efficacia si confrontano sulle stesse richieste. Il fuzzy costa circa 7 volte di più (13,6 contro 1,9 ms di media): un prezzo che deve essere giustificato da un guadagno sulle query con errori di battitura.
-- **Giudici.** Tutti e tre i pool sono giudicati da un LLM (LLM-as-a-judge) con un prompt fisso (`eval/GIUDICE_LLM.md`) e un controllo umano alla cieca su 20 righe per pool (D: accordo 90%, kappa 0,84). Il giudice di D non sapeva nulla del sistema, quelli di A e C conoscevano il progetto. Ogni query ha un solo giudice per tutte e 4 le configurazioni e il pool è cieco, quindi il confronto tra configurazioni resta equo.
-- **Risultati (30 query, 433 giudizi).** nDCG@10: base 0,627, it 0,656, it_boost 0,653, it_boost_fuzzy 0,767. Solo il fuzzy migliora in modo significativo (+0,114, p = 0,004). Il boost sul titolo ha media quasi nulla ma effetti opposti: persona/luogo 0,79 → 0,94, keyword 0,75 → 0,49. Dettagli e cause in `eval/ANALISI_ERRORI.md`.
+- **Giudici.** Le query di A e C sono giudicate a mano. Le 10 query di D sono giudicate da un LLM (LLM-as-a-judge) in una conversazione separata, senza informazioni sul sistema, con un prompt fisso salvato in `eval/GIUDICE_LLM.md` e un controllo a campione di D. Il confronto tra configurazioni resta equo: ogni query ha un solo giudice per tutte e 4 le configurazioni e il pool è cieco.
