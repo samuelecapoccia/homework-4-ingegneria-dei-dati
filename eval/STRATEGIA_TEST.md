@@ -9,24 +9,41 @@ Ogni livello risponde a una domanda diversa. I livelli 1-5 sono automatici e si 
 | 2 | Unit test delle metriche | P@10, MRR e nDCG@10 sono calcolate bene? | D | `python -m pytest eval/tests -q` | **7 superati** su casi calcolati a mano. 1 saltato: il confronto con ir_measures, che non è installato |
 | 3 | Contratto dell'API e integrazione | L'API rispetta il contratto 3 e gestisce gli errori? | C | `cd search && mvn test` (JUnit) | **7/7 superati**: formato e paginazione, valori di default, 400 su parametri non validi, 500 senza dettagli interni, 404, pagina web, integrazione con un mini-indice Lucene reale (boost, fuzzy, sintassi rotta) |
 | 4 | Query note (known-item) | Il documento atteso finisce in cima? | B | `cd search && mvn compile exec:java` | **5/5 al rank 1**: stemming, boost del titolo, frase esatta, notizia specifica, errore di battitura |
-| 5 | Prestazioni | Quanto costa ogni configurazione? | A (script), D (misura con le 30 query) | `python perf/benchmark_api.py --queries eval/queries.tsv` | Vedi la tabella qui sotto. 0 errori |
-| 6 | Efficacia | Quale configurazione dà risultati migliori, e su quali query? | D (giudizi di A, C, D) | `eval/pool.py`, poi `build_qrels.py`, poi `evaluate.py` | In corso: vedi `eval/results/risultati.md` |
+| 5 | Prestazioni | Quanto costa ogni configurazione? | A (misure ufficiali), D (replica su un'altra macchina) | `python perf/benchmark_api.py --queries eval/queries.tsv` | Vedi le tabelle qui sotto. 0 errori |
+| 6 | Efficacia | Quale configurazione dà risultati migliori, e su quali query? | D (giudizi LLM sui pool di A, C, D, controllati alla cieca) | `eval/pool.py`, poi `build_qrels.py`, poi `evaluate.py` | **30 query, 433 giudizi.** nDCG@10: base 0,627, it 0,656, it_boost 0,653, it_boost_fuzzy **0,767**. Solo il fuzzy migliora in modo significativo (+0,114, p = 0,004). Dettagli in `results/risultati.md` |
 
 ## Prestazioni (livello 5)
 
-Latenza lato client in ms sulle 30 query di valutazione, dopo 10 query di riscaldamento.
+**Misure ufficiali (A):** tempo del motore (`took_ms`), Windows 11, JDK 17, 30 query, 10 di riscaldamento escluse.
+Le query di tipo frase sono misurate come frasi.
 
-| config | media | mediana | p95 | max | query senza risultati |
-|---|---|---|---|---|---|
-| base | 1,8 | 1,8 | 2,7 | 2,9 | 1 |
-| it | 1,6 | 1,6 | 2,6 | 3,2 | 1 |
-| it_boost | 1,9 | 1,8 | 3,1 | 3,9 | 1 |
-| it_boost_fuzzy | 13,6 | 11,9 | 38,5 | 40,5 | 0 |
+| config | media | p95 | query senza risultati |
+|---|---|---|---|
+| base | 2,9 ms | 8,5 ms | 1 |
+| it | 1,7 ms | 3,0 ms | 1 |
+| it_boost | 2,2 ms | 4,0 ms | 1 |
+| it_boost_fuzzy | 20,0 ms | 58,0 ms | 0 |
 
-- Il fuzzy costa circa 7 volte di più (13,6 contro 1,9 ms di media), perché ogni termine si espande in tutte le parole del vocabolario entro 1-2 modifiche. Resta comunque sotto i 41 ms.
+**Replica (D):** latenza lato client, Mac (Apple Silicon). In questa misura le query di tipo frase erano ancora
+misurate come parole chiave: è stata fatta prima della correzione `QUOTE_NONE`.
+
+| config | media | p95 |
+|---|---|---|
+| base | 1,8 ms | 2,7 ms |
+| it | 1,6 ms | 2,6 ms |
+| it_boost | 1,9 ms | 3,1 ms |
+| it_boost_fuzzy | 13,6 ms | 38,5 ms |
+
+- **Le due macchine danno lo stesso quadro.** Il fuzzy costa 7-10 volte di più, perché ogni termine si espande in
+  tutte le parole del vocabolario entro 1-2 modifiche. Resta comunque sotto i 100 ms, la soglia di risposta percepita
+  come immediata. Le differenze tra base, it e it_boost (1-2 ms) sono nel rumore di misura.
 - L'unica query senza risultati per base, it e it_boost è "Wikipeida" (q28). Solo il fuzzy la recupera.
-- Indicizzazione (misure di B): base 3,17 s e 18,59 MB, it 2,15 s e 16,63 MB. La differenza di tempo dipende in parte dall'ordine di costruzione: il primo indice paga l'avvio della JVM.
-- Il benchmark legge `queries.tsv` con `csv.DictReader`, che toglie le virgolette alle query di tipo frase. Quindi le frasi sono state misurate come semplici parole chiave.
+- **Indicizzazione:** entrambi gli indici si costruiscono in circa 1 s. La misura con l'ordine invertito (3 esecuzioni
+  per ordine, JVM nuova ogni volta) mostra due effetti:
+  - il primo indice paga 300-400 ms di avvio della JVM (base → it: base 1083 ms, it 682 ms; it → base: it 1006 ms,
+    base 749 ms);
+  - a parità di posizione l'indice italiano resta più veloce del 7-9% e più piccolo del 10% (16,63 contro 18,59 MB),
+    perché senza stopword scrive meno postings.
 
 ## Test esplorativo: "terremotto anconna" (livello 4)
 

@@ -2,12 +2,13 @@
 
 Sceglie a caso N righe per query (seed fisso). Per ognuna mostra query, bisogno informativo, titolo ed estratto
 SENZA il giudizio dell'LLM, chiede il tuo valore (0/1/2) e solo dopo mostra quello dell'LLM.
-Alla fine calcola accordo e kappa di Cohen e salva il confronto in eval/giudizi_llm/controllo_D.csv.
+Alla fine calcola accordo e kappa di Cohen e salva il confronto in eval/giudizi_llm/controllo_<giudice>.csv.
 Nei disaccordi vale il tuo giudizio, che viene scritto in pool_D.csv.
 
 Uso (dalla radice del repo):
     python eval/controllo_campione.py            # 2 righe per query = 20 righe
     python eval/controllo_campione.py --n 1      # 1 riga per query = 10 righe
+    python eval/controllo_campione.py --pool eval/pools/pool_A.csv   # controllo di A (salva controllo_A.csv)
 """
 import argparse
 import csv
@@ -72,7 +73,8 @@ def main():
     n = len(umano)
     accordi = sum(x == y for x, y in zip(umano, llm))
     k = kappa_cohen(umano, llm)
-    out = EVAL_DIR / "giudizi_llm" / "controllo_D.csv"
+    giudice = Path(args.pool).stem.replace("pool_", "")      # A, C o D
+    out = EVAL_DIR / "giudizi_llm" / f"controllo_{giudice}.csv"
     out.parent.mkdir(exist_ok=True)
     with open(out, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["query_id", "doc_id", "umano", "llm"], delimiter=";")
@@ -83,9 +85,9 @@ def main():
         w.writeheader()
         w.writerows(pool)
 
-    frase = (f"D ha rigiudicato alla cieca {n} righe scelte a caso ({args.n} per query, seed {args.seed}), senza vedere "
+    frase = (f"{giudice} ha rigiudicato alla cieca {n} righe scelte a caso ({args.n} per query, seed {args.seed}), senza vedere "
              f"il giudizio dell'LLM: accordo {accordi}/{n} ({accordi / n:.0%}), kappa di Cohen {k:.2f}. "
-             f"Nei {n - accordi} casi di disaccordo vale il giudizio di D (`giudizi_llm/controllo_D.csv`).")
+             f"Nei {n - accordi} casi di disaccordo vale il giudizio di {giudice} (`giudizi_llm/{out.name}`).")
     md = EVAL_DIR / "GIUDICE_LLM.md"
     testo = md.read_text(encoding="utf-8")
     segnaposto = "D ha riletto `<numero>` righe scelte a caso e non era d'accordo con il giudice su `<numero>` di queste."

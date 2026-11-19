@@ -1,9 +1,18 @@
-# Giudizi delle query di D con un LLM (LLM-as-a-judge)
+# Giudizi di rilevanza con un LLM (LLM-as-a-judge)
 
-Le 10 query assegnate a D (vedi `pools/assegnazione.tsv`) sono state giudicate da un modello linguistico.
-Le 20 query di A e C sono state giudicate a mano.
+Ogni giudice (A, C, D) ha 10 query (vedi `pools/assegnazione.tsv`). **Tutti e tre i pool sono stati giudicati da un
+modello linguistico**, con un controllo umano alla cieca su un campione di 20 righe per pool.
 
-## Come è stato fatto
+In tutti i casi il pool è cieco: il giudice non sa da quale configurazione arriva ogni documento. Il giudice di D
+non sapeva nulla del sistema; quelli di A e C conoscevano il progetto.
+
+| pool | righe | 0 | 1 | 2 | controllo alla cieca |
+|---|---|---|---|---|---|
+| D | 149 | 60 | 25 | 64 | accordo 18/20 (90%), kappa 0,84 |
+| A | 146 | 81 | 8 | 57 | in attesa (`giudizi_llm/controllo_A.csv`) |
+| C | 138 | 43 | 29 | 66 | in attesa (`giudizi_llm/controllo_C.csv`) |
+
+## Pool D: come è stato fatto
 
 - **Conversazione nuova**, fuori dal progetto di lavoro. Il giudice non sapeva nulla del sistema, delle configurazioni o dei risultati attesi, e aveva solo il pool cieco e le linee guida.
 - **Input:** `pools/pool_D.csv`, in ordine casuale e senza indicazione della configurazione da cui arriva ogni documento.
@@ -56,13 +65,41 @@ REGOLE
 - Alla fine dimmi quante righe hai giudicato 0, 1 e 2, e quali righe (se ce ne sono) erano impossibili da giudicare.
 ```
 
-## Controllo umano a campione
+## Pool D: controllo umano a campione
 
 D ha rigiudicato alla cieca 20 righe scelte a caso (2 per query, seed 7), senza vedere il giudizio dell'LLM: accordo 18/20 (90%), kappa di Cohen 0.84. Nei 2 casi di disaccordo vale il giudizio di D (`giudizi_llm/controllo_D.csv`).
 
+## Pool A
+
+- **Giudice:** un LLM che, a differenza di quello di D, **conosceva il progetto**. Il pool però era cieco, quindi non
+  sapeva quale configurazione avesse trovato ogni documento.
+- **Risposte grezze:** in `giudizi_llm/risposta_pool_A.txt`, con il motivo di ogni riga. Sono state applicate con
+  `applica_giudizi_llm.py`.
+- **Risultato:** 146 righe giudicate su 146 (0 = 81, 1 = 8, 2 = 57).
+- **Casi al limite segnalati da A:**
+  - q13 "L'Aquila": i risultati di rugby con la sola squadra della città valgono 0;
+  - q04: le possibili dimissioni di papa Francesco valgono 0, perché il bisogno informativo riguarda Benedetto XVI;
+  - q19: i necrologi di Peres e Gorbaciov, dove il Nobel è solo citato, valgono 0.
+- **Controllo umano alla cieca:** in attesa di A (`python eval/controllo_campione.py --pool eval/pools/pool_A.csv`,
+  che salva `giudizi_llm/controllo_A.csv`).
+
+## Pool C
+
+- **Giudice:** un LLM che conosceva il progetto, come quello di A. Il pool era cieco.
+- **Risposte grezze:** in `giudizi_llm/risposta_pool_C.txt`, con il motivo di ogni riga. Sono state applicate con
+  `applica_giudizi_llm.py`.
+- **Risultato:** 138 righe giudicate su 138 (0 = 43, 1 = 29, 2 = 66).
+- **Controllo umano alla cieca:** in attesa di C (`python eval/controllo_campione.py --pool eval/pools/pool_C.csv`,
+  che salva `giudizi_llm/controllo_C.csv`).
+
 ## Limiti
 
-- Le query hanno giudici di natura diversa: una persona per quelle di A e C, un LLM per quelle di D. Il confronto tra le
-  configurazioni resta equo, perché ogni query ha un solo giudice per tutte e 4 le configurazioni e il pool è cieco.
-  I confronti tra tipi di query, invece, possono risentire del giudice.
+- **Giudici diversi per pool diversi.** Il giudice di D non sapeva nulla del sistema, quelli di A e C conoscevano il progetto.
+  Il confronto tra le configurazioni resta equo, perché ogni query ha un solo giudice per tutte e 4 le configurazioni
+  e il pool è cieco. I confronti tra tipi di query, invece, possono risentire del giudice.
+- **I giudici usano la scala in modo diverso.** Il valore 1 (parzialmente rilevante) è il 5% dei giudizi nel pool A
+  (8 su 146), il 17% nel pool D (25 su 149) e il 21% nel pool C (29 su 138): il giudice di A è quasi binario. Questo
+  pesa poco su P@10 e MRR (dove 1 e 2 contano allo stesso modo) e di più su nDCG@10.
+- **Nessun giudizio umano completo.** Il controllo alla cieca su un campione misura quanto l'LLM è d'accordo con una
+  persona, ma non sostituisce un giudizio umano su tutto il pool.
 - Il giudice LLM vede solo l'inizio dell'articolo: un articolo rilevante solo più avanti nel testo può essere sottostimato.
