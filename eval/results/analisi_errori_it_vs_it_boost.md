@@ -4,7 +4,7 @@ Rilevanza tra parentesi quadre (2 molto, 1 parz., 0 non rilevante, ? non giudica
 
 ## q04 — `dimissioni del papa` (keyword)
 
-nDCG@10: it = 0.832, it_boost = 0.000 (Δ -0.832)
+nDCG@10: it = 0.795, it_boost = 0.000 (Δ -0.795)
 
 | # | it | it_boost |
 |---|---|---|
@@ -14,10 +14,10 @@ nDCG@10: it = 0.832, it_boost = 0.000 (Δ -0.832)
 | 4 | [0] Berlusconi al Senato | [0] Giappone dimissioni del governo di Koizumi 2005 |
 | 5 | [0] Blair da Benedetto XVI, forse annuncio della conversione | [0] Dimissioni Follini da segretario UDC 2005 |
 | 6 | [2] Benedetto XVI annuncia il suo ritiro dal pontificato | [0] Papa Francesco: presto una donna a capo di un dicastero |
-| 7 | [0] Polonia: si è dimesso l'arcivescovo Wielgus | [0] Regno Unito dimissioni del ministro del Lavoro 2005 |
+| 7 | [1] Polonia: si è dimesso l'arcivescovo Wielgus | [0] Regno Unito dimissioni del ministro del Lavoro 2005 |
 | 8 | [0] Berlusconi si dissocia dalla Lega sull'Euro | [0] OMC: il direttore generale annuncia le dimissioni |
 | 9 | [0] Papa Benedetto XVI in Turchia | [0] Il Papa si aggrava |
-| 10 | [0] Una fedele strattona il Papa, che reagisce | [0] Peggiorate le condizioni del Papa |
+| 10 | [1] Una fedele strattona il Papa, che reagisce | [0] Peggiorate le condizioni del Papa |
 
 Entrati con it_boost: 9 documenti, di cui rilevanti (>=1): 0.
 
@@ -44,23 +44,23 @@ Entrati con it_boost: 6 documenti, di cui rilevanti (>=1): 1.
 
 Causa (da scrivere a mano dopo aver guardato la tabella): ...
 
-## q01 — `naufragio nave da crociera` (keyword)
+## q03 — `incidente centrale nucleare` (keyword)
 
-nDCG@10: it = 0.922, it_boost = 0.617 (Δ -0.304)
+nDCG@10: it = 0.995, it_boost = 0.791 (Δ -0.203)
 
 | # | it | it_boost |
 |---|---|---|
-| 1 | [2] Naufragio della Costa Concordia | [2] Naufragio della Costa Concordia |
-| 2 | [2] Costa Concordia: cominciano i lavori di rimozione | [0] Naufraga peschereccio di Mazara del Vallo |
-| 3 | [0] La Spezia: affonda nave cargo vicino al porto | [0] Pakistan test missile da crociera 2005 |
-| 4 | [0] Incidente nel golfo di Oman: nave iraniana affondata per errore | [0] La Spezia: affonda nave cargo vicino al porto |
-| 5 | [0] Italia: Mazara del Vallo, ritrovato nella Thetis il corpo del ricercatore russo disperso nel naufragio | [0] Italia: Mazara del Vallo, ritrovato nella Thetis il corpo del ricercatore russo disperso nel naufragio |
-| 6 | [0] Ritrovato l'HMS Sidney | [0] Incidente nel golfo di Oman: nave iraniana affondata per errore |
-| 7 | [2] Costa Concordia: rotazione ultimata, nave in asse | [0] Naufragio nel Mar d'Azov: 2 morti e 8 dispersi |
-| 8 | [0] La portacontainer "Napoli" si incaglia nella Manica | [2] Costa Concordia: rotazione ultimata, nave in asse |
-| 9 | [0] Naufraga peschereccio di Mazara del Vallo | [0] Macedonia: naufragio, 15 i morti accertati |
-| 10 | [0] Naufragio nel Mar d'Azov: 2 morti e 8 dispersi | [0] Tanzania: naufragio nel lago Vittoria provoca oltre 130 morti |
+| 1 | [2] Terzo incidente in poche settimane alla centrale nucleare di Tricastin | [2] Terzo incidente in poche settimane alla centrale nucleare di Tricastin |
+| 2 | [2] Incidente nucleare in una centrale in Francia: acqua contaminata da uranio riversata nei fiumi | [2] Incidente nucleare in una centrale in Francia: acqua contaminata da uranio riversata nei fiumi |
+| 3 | [2] Due fuoriuscite di liquido da centrali nucleari in due settimane generano polemiche sulla sicurezza in Francia | [2] Esplosione nella centrale nucleare di Fukushima |
+| 4 | [2] Francia, esplosione in sito di stoccaggio delle scorie nucleari | [2] Liquido fuoriesce da centrale nucleare slovena |
+| 5 | [2] Fukushima: livelli di radioattività estremamente elevati. Secondo Greenpeace è un incidente di livello 7 | [0] Germania: demolita "di nascosto" la centrale nucleare di Filisburgo |
+| 6 | [2] Liquido fuoriesce da centrale nucleare slovena | [1] 8 centrali nucleari francesi non superano test |
+| 7 | [1] Nucleare: la TV svizzera censura i Simpson | [2] Due fuoriuscite di liquido da centrali nucleari in due settimane generano polemiche sulla sicurezza in Francia |
+| 8 | [2] Esplosione nella centrale nucleare di Fukushima | [0] Incidente alla centrale idroelettrica russa di Sajano-Šušenskaja |
+| 9 | [1] Doppio sisma in Giappone: morti, feriti, fughe radioattive | [0] Striscia di Gaza: Israele lancia volantini. Centrale nucleare a rischio razzi |
+| 10 | [2] A 3 mesi dal disastro di Fukushima situazione ancora "molto seria" secondo IAEA. In Europa, Germania e Svizzera abbandonano il nucleare | [2] Francia, esplosione in sito di stoccaggio delle scorie nucleari |
 
-Entrati con it_boost: 3 documenti, di cui rilevanti (>=1): 0.
+Entrati con it_boost: 4 documenti, di cui rilevanti (>=1): 1.
 
 Causa (da scrivere a mano dopo aver guardato la tabella): ...

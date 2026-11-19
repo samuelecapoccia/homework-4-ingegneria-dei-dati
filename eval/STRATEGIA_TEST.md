@@ -10,7 +10,7 @@ Ogni livello risponde a una domanda diversa. I livelli 1-5 sono automatici e si 
 | 3 | Contratto dell'API e integrazione | L'API rispetta il contratto 3 e gestisce gli errori? | C | `cd search && mvn test` (JUnit) | **7/7 superati**: formato e paginazione, valori di default, 400 su parametri non validi, 500 senza dettagli interni, 404, pagina web, integrazione con un mini-indice Lucene reale (boost, fuzzy, sintassi rotta) |
 | 4 | Query note (known-item) | Il documento atteso finisce in cima? | B | `cd search && mvn compile exec:java` | **5/5 al rank 1**: stemming, boost del titolo, frase esatta, notizia specifica, errore di battitura |
 | 5 | Prestazioni | Quanto costa ogni configurazione? | A (misure ufficiali), D (replica su un'altra macchina) | `python perf/benchmark_api.py --queries eval/queries.tsv` | Vedi le tabelle qui sotto. 0 errori |
-| 6 | Efficacia | Quale configurazione dà risultati migliori, e su quali query? | D (giudizi LLM sui pool di A, C, D, controllati alla cieca) | `eval/pool.py`, poi `build_qrels.py`, poi `evaluate.py` | **30 query, 433 giudizi.** nDCG@10: base 0,627, it 0,656, it_boost 0,653, it_boost_fuzzy **0,767**. Solo il fuzzy migliora in modo significativo (+0,114, p = 0,004). Dettagli in `results/risultati.md` |
+| 6 | Efficacia | Quale configurazione dà risultati migliori, e su quali query? | D (giudizi LLM sui pool di A, C, D, controllati alla cieca) | `eval/pool.py`, poi `build_qrels.py`, poi `evaluate.py` | **30 query, 433 giudizi.** nDCG@10: base 0,631, it 0,653, it_boost 0,659, it_boost_fuzzy **0,768**. Solo il fuzzy migliora in modo significativo (+0,108, p = 0,008). Dettagli in `results/risultati.md` |
 
 ## Prestazioni (livello 5)
 

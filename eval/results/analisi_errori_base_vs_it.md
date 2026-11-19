@@ -2,27 +2,6 @@
 
 Rilevanza tra parentesi quadre (2 molto, 1 parz., 0 non rilevante, ? non giudicato).
 
-## q20 — `"Giro d'Italia"` (frase)
-
-nDCG@10: base = 0.933, it = 0.857 (Δ -0.077)
-
-| # | base | it |
-|---|---|---|
-| 1 | [2] Giro d'Italia: tappa 19 accorciata per maltempo, si partirà da Abbiategrasso | [2] Giro d'Italia: tappa 19 accorciata per maltempo, si partirà da Abbiategrasso |
-| 2 | [2] Giro d'Italia: crono a squadre a Ischia | [2] Giro d'Italia: crono a squadre a Ischia |
-| 3 | [2] Giro d'Italia 2007: ventesima tappa | [2] Giro d'Italia 2007: ventesima tappa |
-| 4 | [2] Giro d'Italia 2008: prima tappa | [2] Giro d'Italia 2008: prima tappa |
-| 5 | [2] Giro d'Italia 2007: tredicesima tappa | [2] Giro d'Italia 2007: tredicesima tappa |
-| 6 | [2] Giro d'Italia 2006: ventunesima tappa | [0] Il 2 luglio partirà il Tour de France |
-| 7 | [2] Giro d'Italia 2006: prima tappa | [2] Giro d'Italia 2006: ventunesima tappa |
-| 8 | [1] È morto l'ex ciclista Giordano Cottur | [2] Giro d'Italia 2006: prima tappa |
-| 9 | [2] Giro d'Italia 2008: ventunesima tappa | [1] È morto l'ex ciclista Giordano Cottur |
-| 10 | [1] Ivan Basso confessa l'uso di sostanze dopanti | [1] Ciclismo: è morto Charly Gaul |
-
-Entrati con it: 2 documenti, di cui rilevanti (>=1): 1.
-
-Causa (da scrivere a mano dopo aver guardato la tabella): ...
-
 ## q18 — `"Stazione Spaziale Internazionale"` (frase)
 
 nDCG@10: base = 0.968, it = 0.912 (Δ -0.056)
@@ -41,6 +20,27 @@ nDCG@10: base = 0.968, it = 0.912 (Δ -0.056)
 | 10 | [1] NASA: rinviato il lancio di Crew Dragon | [0] Iseo al buio per M'illumino di meno |
 
 Entrati con it: 1 documenti, di cui rilevanti (>=1): 0.
+
+Causa (da scrivere a mano dopo aver guardato la tabella): ...
+
+## q20 — `"Giro d'Italia"` (frase)
+
+nDCG@10: base = 0.902, it = 0.857 (Δ -0.045)
+
+| # | base | it |
+|---|---|---|
+| 1 | [2] Giro d'Italia: tappa 19 accorciata per maltempo, si partirà da Abbiategrasso | [2] Giro d'Italia: tappa 19 accorciata per maltempo, si partirà da Abbiategrasso |
+| 2 | [2] Giro d'Italia: crono a squadre a Ischia | [2] Giro d'Italia: crono a squadre a Ischia |
+| 3 | [2] Giro d'Italia 2007: ventesima tappa | [2] Giro d'Italia 2007: ventesima tappa |
+| 4 | [2] Giro d'Italia 2008: prima tappa | [2] Giro d'Italia 2008: prima tappa |
+| 5 | [2] Giro d'Italia 2007: tredicesima tappa | [2] Giro d'Italia 2007: tredicesima tappa |
+| 6 | [2] Giro d'Italia 2006: ventunesima tappa | [0] Il 2 luglio partirà il Tour de France |
+| 7 | [2] Giro d'Italia 2006: prima tappa | [2] Giro d'Italia 2006: ventunesima tappa |
+| 8 | [1] È morto l'ex ciclista Giordano Cottur | [2] Giro d'Italia 2006: prima tappa |
+| 9 | [2] Giro d'Italia 2008: ventunesima tappa | [1] È morto l'ex ciclista Giordano Cottur |
+| 10 | [0] Ivan Basso confessa l'uso di sostanze dopanti | [1] Ciclismo: è morto Charly Gaul |
+
+Entrati con it: 2 documenti, di cui rilevanti (>=1): 1.
 
 Causa (da scrivere a mano dopo aver guardato la tabella): ...
 

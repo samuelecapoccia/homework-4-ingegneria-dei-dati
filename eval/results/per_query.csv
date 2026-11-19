@@ -1,8 +1,8 @@
 query_id,query,tipo,config,P@10,MRR,nDCG@10,judged@10
-q01,naufragio nave da crociera,keyword,base,0.3000,1.0000,0.9325,1.0000
-q01,naufragio nave da crociera,keyword,it,0.3000,1.0000,0.9218,1.0000
-q01,naufragio nave da crociera,keyword,it_boost,0.2000,1.0000,0.6173,1.0000
-q01,naufragio nave da crociera,keyword,it_boost_fuzzy,0.2000,1.0000,0.6508,1.0000
+q01,naufragio nave da crociera,keyword,base,0.3000,1.0000,0.7757,1.0000
+q01,naufragio nave da crociera,keyword,it,0.3000,1.0000,0.7668,1.0000
+q01,naufragio nave da crociera,keyword,it_boost,0.3000,1.0000,0.7087,1.0000
+q01,naufragio nave da crociera,keyword,it_boost_fuzzy,0.3000,1.0000,0.7095,1.0000
 q02,epidemia influenza suina,keyword,base,0.4000,1.0000,0.7860,1.0000
 q02,epidemia influenza suina,keyword,it,0.4000,1.0000,0.7608,1.0000
 q02,epidemia influenza suina,keyword,it_boost,0.4000,1.0000,0.7420,1.0000
@@ -11,26 +11,26 @@ q03,incidente centrale nucleare,keyword,base,0.8000,1.0000,0.8879,1.0000
 q03,incidente centrale nucleare,keyword,it,1.0000,1.0000,0.9948,1.0000
 q03,incidente centrale nucleare,keyword,it_boost,0.7000,1.0000,0.7914,1.0000
 q03,incidente centrale nucleare,keyword,it_boost_fuzzy,0.7000,1.0000,0.7969,1.0000
-q04,dimissioni del papa,keyword,base,0.2000,1.0000,0.8503,1.0000
-q04,dimissioni del papa,keyword,it,0.2000,1.0000,0.8316,1.0000
+q04,dimissioni del papa,keyword,base,0.4000,1.0000,0.8100,1.0000
+q04,dimissioni del papa,keyword,it,0.4000,1.0000,0.7954,1.0000
 q04,dimissioni del papa,keyword,it_boost,0.0000,0.0000,0.0000,1.0000
 q04,dimissioni del papa,keyword,it_boost_fuzzy,0.0000,0.0000,0.0000,1.0000
-q05,crisi finanziaria borse,keyword,base,0.6000,1.0000,0.6664,1.0000
-q05,crisi finanziaria borse,keyword,it,0.8000,1.0000,0.8164,1.0000
-q05,crisi finanziaria borse,keyword,it_boost,0.8000,1.0000,0.7391,1.0000
-q05,crisi finanziaria borse,keyword,it_boost_fuzzy,0.8000,1.0000,0.7407,1.0000
+q05,crisi finanziaria borse,keyword,base,0.6000,1.0000,0.7325,1.0000
+q05,crisi finanziaria borse,keyword,it,0.7000,1.0000,0.7928,1.0000
+q05,crisi finanziaria borse,keyword,it_boost,0.8000,1.0000,0.8124,1.0000
+q05,crisi finanziaria borse,keyword,it_boost_fuzzy,0.8000,1.0000,0.8141,1.0000
 q06,elezioni presidenziali americane,keyword,base,0.3000,1.0000,0.6601,1.0000
 q06,elezioni presidenziali americane,keyword,it,0.4000,1.0000,0.8248,1.0000
 q06,elezioni presidenziali americane,keyword,it_boost,0.1000,0.2000,0.1312,1.0000
 q06,elezioni presidenziali americane,keyword,it_boost_fuzzy,0.1000,0.3333,0.1696,1.0000
-q07,naufragio migranti Mediterraneo,keyword,base,0.0000,0.0000,0.0000,1.0000
-q07,naufragio migranti Mediterraneo,keyword,it,0.0000,0.0000,0.0000,1.0000
-q07,naufragio migranti Mediterraneo,keyword,it_boost,0.0000,0.0000,0.0000,1.0000
-q07,naufragio migranti Mediterraneo,keyword,it_boost_fuzzy,0.1000,0.1000,0.2891,1.0000
-q08,pandemia coronavirus,keyword,base,0.9000,1.0000,0.8319,1.0000
-q08,pandemia coronavirus,keyword,it,0.9000,1.0000,0.8319,1.0000
-q08,pandemia coronavirus,keyword,it_boost,1.0000,1.0000,0.8876,1.0000
-q08,pandemia coronavirus,keyword,it_boost_fuzzy,1.0000,1.0000,0.8876,1.0000
+q07,naufragio migranti Mediterraneo,keyword,base,0.1000,0.1111,0.1846,1.0000
+q07,naufragio migranti Mediterraneo,keyword,it,0.1000,0.1111,0.1846,1.0000
+q07,naufragio migranti Mediterraneo,keyword,it_boost,0.1000,0.1429,0.2044,1.0000
+q07,naufragio migranti Mediterraneo,keyword,it_boost_fuzzy,0.2000,0.3333,0.4838,1.0000
+q08,pandemia coronavirus,keyword,base,0.9000,1.0000,0.8024,1.0000
+q08,pandemia coronavirus,keyword,it,0.9000,1.0000,0.8024,1.0000
+q08,pandemia coronavirus,keyword,it_boost,1.0000,1.0000,0.9168,1.0000
+q08,pandemia coronavirus,keyword,it_boost_fuzzy,1.0000,1.0000,0.9168,1.0000
 q09,Valentino Rossi,persona/luogo,base,0.9000,1.0000,0.8375,1.0000
 q09,Valentino Rossi,persona/luogo,it,0.9000,1.0000,0.8417,1.0000
 q09,Valentino Rossi,persona/luogo,it_boost,1.0000,1.0000,0.9816,1.0000
@@ -47,10 +47,10 @@ q12,Papa Francesco,persona/luogo,base,0.8000,1.0000,0.6789,1.0000
 q12,Papa Francesco,persona/luogo,it,0.8000,1.0000,0.6718,1.0000
 q12,Papa Francesco,persona/luogo,it_boost,0.9000,1.0000,0.8189,1.0000
 q12,Papa Francesco,persona/luogo,it_boost_fuzzy,0.9000,1.0000,0.8189,1.0000
-q13,L'Aquila,persona/luogo,base,0.1000,0.1429,0.1301,1.0000
-q13,L'Aquila,persona/luogo,it,0.3000,0.3333,0.4865,1.0000
-q13,L'Aquila,persona/luogo,it_boost,0.4000,1.0000,1.0000,1.0000
-q13,L'Aquila,persona/luogo,it_boost_fuzzy,0.4000,1.0000,1.0000,1.0000
+q13,L'Aquila,persona/luogo,base,0.2000,0.3333,0.1989,1.0000
+q13,L'Aquila,persona/luogo,it,0.4000,0.3333,0.4856,1.0000
+q13,L'Aquila,persona/luogo,it_boost,0.5000,1.0000,0.9271,1.0000
+q13,L'Aquila,persona/luogo,it_boost_fuzzy,0.5000,1.0000,0.9271,1.0000
 q14,Gheddafi,persona/luogo,base,1.0000,1.0000,0.9946,1.0000
 q14,Gheddafi,persona/luogo,it,1.0000,1.0000,0.9946,1.0000
 q14,Gheddafi,persona/luogo,it_boost,1.0000,1.0000,0.9946,1.0000
@@ -71,11 +71,11 @@ q18,"""Stazione Spaziale Internazionale""",frase,base,1.0000,1.0000,0.9678,1.000
 q18,"""Stazione Spaziale Internazionale""",frase,it,0.9000,1.0000,0.9120,1.0000
 q18,"""Stazione Spaziale Internazionale""",frase,it_boost,0.9000,1.0000,0.8478,1.0000
 q18,"""Stazione Spaziale Internazionale""",frase,it_boost_fuzzy,0.9000,1.0000,0.8478,1.0000
-q19,"""Premio Nobel per la pace""",frase,base,0.7000,1.0000,0.8349,1.0000
-q19,"""Premio Nobel per la pace""",frase,it,0.7000,1.0000,0.8460,1.0000
-q19,"""Premio Nobel per la pace""",frase,it_boost,0.7000,1.0000,0.8460,1.0000
-q19,"""Premio Nobel per la pace""",frase,it_boost_fuzzy,0.7000,1.0000,0.8460,1.0000
-q20,"""Giro d'Italia""",frase,base,1.0000,1.0000,0.9335,1.0000
+q19,"""Premio Nobel per la pace""",frase,base,0.7000,1.0000,0.8641,1.0000
+q19,"""Premio Nobel per la pace""",frase,it,0.7000,1.0000,0.8539,1.0000
+q19,"""Premio Nobel per la pace""",frase,it_boost,0.7000,1.0000,0.8539,1.0000
+q19,"""Premio Nobel per la pace""",frase,it_boost_fuzzy,0.7000,1.0000,0.8539,1.0000
+q20,"""Giro d'Italia""",frase,base,0.9000,1.0000,0.9017,1.0000
 q20,"""Giro d'Italia""",frase,it,0.9000,1.0000,0.8567,1.0000
 q20,"""Giro d'Italia""",frase,it_boost,1.0000,1.0000,1.0000,1.0000
 q20,"""Giro d'Italia""",frase,it_boost_fuzzy,1.0000,1.0000,1.0000,1.0000
@@ -87,10 +87,10 @@ q22,"""Formula 1""",frase,base,1.0000,1.0000,0.9450,1.0000
 q22,"""Formula 1""",frase,it,1.0000,1.0000,0.9306,1.0000
 q22,"""Formula 1""",frase,it_boost,1.0000,1.0000,0.9669,1.0000
 q22,"""Formula 1""",frase,it_boost_fuzzy,1.0000,1.0000,0.9669,1.0000
-q23,"""guerra in Ucraina""",frase,base,0.3000,0.5000,0.7157,1.0000
-q23,"""guerra in Ucraina""",frase,it,0.3000,1.0000,0.9120,1.0000
-q23,"""guerra in Ucraina""",frase,it_boost,0.3000,1.0000,0.9816,1.0000
-q23,"""guerra in Ucraina""",frase,it_boost_fuzzy,0.3000,1.0000,0.9816,1.0000
+q23,"""guerra in Ucraina""",frase,base,0.3000,0.5000,0.6585,1.0000
+q23,"""guerra in Ucraina""",frase,it,0.3000,1.0000,0.7763,1.0000
+q23,"""guerra in Ucraina""",frase,it_boost,0.3000,1.0000,0.8600,1.0000
+q23,"""guerra in Ucraina""",frase,it_boost_fuzzy,0.3000,1.0000,0.8600,1.0000
 q24,terremotto Haiti,errore_battitura,base,0.3000,0.3333,0.5391,1.0000
 q24,terremotto Haiti,errore_battitura,it,0.3000,0.3333,0.5391,1.0000
 q24,terremotto Haiti,errore_battitura,it_boost,0.3000,0.5000,0.6556,1.0000
@@ -111,10 +111,10 @@ q28,Wikipeida,errore_battitura,base,0.0000,0.0000,0.0000,1.0000
 q28,Wikipeida,errore_battitura,it,0.0000,0.0000,0.0000,1.0000
 q28,Wikipeida,errore_battitura,it_boost,0.0000,0.0000,0.0000,1.0000
 q28,Wikipeida,errore_battitura,it_boost_fuzzy,1.0000,1.0000,1.0000,1.0000
-q29,calciopolli Juventus,errore_battitura,base,0.0000,0.0000,0.0000,1.0000
-q29,calciopolli Juventus,errore_battitura,it,0.0000,0.0000,0.0000,1.0000
-q29,calciopolli Juventus,errore_battitura,it_boost,0.1000,0.3333,0.1900,1.0000
-q29,calciopolli Juventus,errore_battitura,it_boost_fuzzy,0.2000,1.0000,1.0000,1.0000
+q29,calciopolli Juventus,errore_battitura,base,0.1000,0.1429,0.1065,1.0000
+q29,calciopolli Juventus,errore_battitura,it,0.1000,0.1250,0.1008,1.0000
+q29,calciopolli Juventus,errore_battitura,it_boost,0.1000,0.3333,0.1597,1.0000
+q29,calciopolli Juventus,errore_battitura,it_boost_fuzzy,0.2000,1.0000,0.8403,1.0000
 q30,Brexti referendum,errore_battitura,base,0.0000,0.0000,0.0000,1.0000
 q30,Brexti referendum,errore_battitura,it,0.0000,0.0000,0.0000,1.0000
 q30,Brexti referendum,errore_battitura,it_boost,0.0000,0.0000,0.0000,1.0000

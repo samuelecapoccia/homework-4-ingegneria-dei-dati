@@ -2,12 +2,14 @@
 
 Sceglie a caso N righe per query (seed fisso). Per ognuna mostra query, bisogno informativo, titolo ed estratto
 SENZA il giudizio dell'LLM, chiede il tuo valore (0/1/2) e solo dopo mostra quello dell'LLM.
-Alla fine calcola accordo e kappa di Cohen e salva il confronto in eval/giudizi_llm/controllo_D.csv.
+Alla fine calcola accordo e kappa di Cohen e salva il confronto in eval/giudizi_llm/controllo_<giudice>.csv.
 Nei disaccordi vale il tuo giudizio, che viene scritto in pool_D.csv.
 
 Uso (dalla radice del repo):
     python eval/controllo_campione.py            # 2 righe per query = 20 righe
     python eval/controllo_campione.py --n 1      # 1 riga per query = 10 righe
+    python eval/controllo_campione.py --pool eval/pools/pool_C.csv   # controllo di C (salva controllo_C.csv)
+    (--chi X forza il nome del giudice, come nella versione usata da A)
 """
 import argparse
 import csv
@@ -41,8 +43,9 @@ def main():
     ap.add_argument("--pool", default=EVAL_DIR / "pools" / "pool_D.csv")
     ap.add_argument("--n", type=int, default=2, help="righe per query")
     ap.add_argument("--seed", type=int, default=7)
-    ap.add_argument("--chi", default="D", help="chi fa il controllo (A, C o D): decide il nome del file di output")
+    ap.add_argument("--chi", default=None, help="chi fa il controllo (A, C o D); se manca si ricava dal nome del pool")
     args = ap.parse_args()
+    giudice = args.chi or Path(args.pool).stem.replace("pool_", "")      # pool_C.csv -> C
 
     pool = read_pool_csv(args.pool)
     per_query = {}
@@ -67,13 +70,13 @@ def main():
         llm.append(l)
         confronto.append({"query_id": r["query_id"], "doc_id": r["doc_id"], "umano": v, "llm": l})
         if v != l:                       # vale il giudizio umano
-            r["motivo"] = f"{r.get('motivo', '')} [corretto da {args.chi}: LLM aveva {l}]".strip()
+            r["motivo"] = f"{r.get('motivo', '')} [corretto da {giudice}: LLM aveva {l}]".strip()
             r["rilevanza"] = v
 
     n = len(umano)
     accordi = sum(x == y for x, y in zip(umano, llm))
     k = kappa_cohen(umano, llm)
-    out = EVAL_DIR / "giudizi_llm" / f"controllo_{args.chi}.csv"
+    out = EVAL_DIR / "giudizi_llm" / f"controllo_{giudice}.csv"
     out.parent.mkdir(exist_ok=True)
     with open(out, "w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=["query_id", "doc_id", "umano", "llm"], delimiter=";")
@@ -84,9 +87,9 @@ def main():
         w.writeheader()
         w.writerows(pool)
 
-    frase = (f"{args.chi} ha rigiudicato alla cieca {n} righe scelte a caso ({args.n} per query, seed {args.seed}), senza vedere "
+    frase = (f"{giudice} ha rigiudicato alla cieca {n} righe scelte a caso ({args.n} per query, seed {args.seed}), senza vedere "
              f"il giudizio dell'LLM: accordo {accordi}/{n} ({accordi / n:.0%}), kappa di Cohen {k:.2f}. "
-             f"Nei {n - accordi} casi di disaccordo vale il giudizio di {args.chi} (`giudizi_llm/controllo_{args.chi}.csv`).")
+             f"Nei {n - accordi} casi di disaccordo vale il giudizio di {giudice} (`giudizi_llm/{out.name}`).")
     md = EVAL_DIR / "GIUDICE_LLM.md"
     testo = md.read_text(encoding="utf-8")
     segnaposto = "D ha riletto `<numero>` righe scelte a caso e non era d'accordo con il giudice su `<numero>` di queste."
